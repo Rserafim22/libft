@@ -3,23 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 13:39:57 by rserafim          #+#    #+#             */
-/*   Updated: 2021/10/20 13:40:03 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/12 17:37:56 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/19 15:49:59 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_toupper(int i)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (i >= 'a' && i <= 'z')
+		return (i - 32);
+	return (i);
 }
-/*
-int	main()
-{
-	printf("%c\n", ft_toupper('.'));
-}*/

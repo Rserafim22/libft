@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 10:57:19 by rserafim          #+#    #+#             */
-/*   Updated: 2021/11/03 14:34:50 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/22 14:34:02 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/29 13:43:16 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <string.h>
 #include "libft.h"
 
 void	*ft_strcpy2(char *dest, char *src)
@@ -80,3 +80,9 @@ char	*ft_itoa(int n)
 		return (NULL);
 	return (ft_glitchnorminette(nb, str, size));
 }
+/*
+int main()
+{
+	printf("%s\n", ft_itoa(1008756521));	
+	printf("%s\n", itoa(1008756521));
+}*/

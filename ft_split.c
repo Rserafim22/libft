@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:46:08 by rserafim          #+#    #+#             */
-/*   Updated: 2021/11/02 13:08:23 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/21 11:43:42 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/29 11:48:23 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_words_counter(const char *str, char c)
@@ -47,28 +48,28 @@ static void	ft_free(char **result, int i)
 	return ;
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(const char *str, char c)
 {
 	char	**result;
 	int		i;
 	int		count;
 
 	i = 0;
-	if (!s)
+	if (!str)
 		return (NULL);
-	count = ft_words_counter((char *)s, c);
+	count = ft_words_counter((char *)str, c);
 	result = malloc(sizeof(char *) * (count + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
 	while (i < count)
 	{
-		while (*s == c && *s)
-			s++;
-		result[i] = ft_substr((char *)s, 0, ft_len((char *)s, c));
+		while (*str == c && *str)
+			str++;
+		result[i] = ft_substr((char *)str, 0, ft_len((char *)str, c));
 		if (result[i] == NULL)
 			ft_free(result, i);
-		s = s + ft_len((char *)s, c);
+		str = str + ft_len((char *)str, c);
 		i++;
 	}
 	result[i] = NULL;

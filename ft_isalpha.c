@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isaplha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 13:32:16 by rserafim          #+#    #+#             */
-/*   Updated: 2021/10/20 13:34:04 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/12 15:06:49 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/19 13:50:46 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalpha(int i)
 {
-	if ((c >= 'A' && c <= 'z') && (c >= 'a' || c <= 'Z'))
-	{
+	if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'))
 		return (1);
-	}
-	return (0);
+	else
+		return (0);
 }
-/*
-int	main()
+/*int main ()
 {
-	int c;
-	c = '?';
-		printf("%d\n", ft_isalpha(c));
+    int i = '0';
+    
+	printf("%d\n",ft_isalpha(i));
 }*/

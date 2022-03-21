@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:53:09 by eschmid           #+#    #+#             */
-/*   Updated: 2021/10/20 11:58:06 by eschmid          ###   ########.fr       */
+/*   Created: 2021/10/29 11:54:41 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/29 11:54:44 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	unsigned char	*yazebi;
-	unsigned char	zebi;
-	size_t			i;
-
-	i = 0;
-	yazebi = (unsigned char *)s;
-	zebi = (unsigned char)c;
-	while (i < n)
+	if (alst)
 	{
-		if (*yazebi == zebi)
-			return (yazebi);
-		i++;
-		yazebi++;
+		if (*alst)
+			new->next = *alst;
+		*alst = new;
 	}
-	return (NULL);
 }
-/*
-int	main()
-{
-	char	*s = "salut";
-	printf("%s\n", s);
-	printf("%s\n", ft_memchr(s, 'l', 3));
-}*/

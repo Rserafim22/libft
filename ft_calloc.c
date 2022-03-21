@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 14:33:25 by rserafim          #+#    #+#             */
-/*   Updated: 2021/10/20 13:35:31 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/19 10:34:18 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/19 15:23:36 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
@@ -22,10 +22,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(ptr, size * count);
 	return (ptr);
 }
-/*
-int	main()
-{
-
-	printf("%s\n", ft_calloc(10, 10));
-
-}*/

@@ -34,21 +34,45 @@ SRC = ft_putnbr_fd.c\
 	  ft_memmove.c\
 	  ft_memcpy.c\
 	  ft_bzero.c\
-	  ft_memset.c
+	  ft_memset.c\
+	  ft_printf.c\
+	  ft_printf_utils.c\
+	  ft_print_hex.c\
+	  ft_printf.c\
+	  ft_print_unsigned.c\
+	  ft_itoa.c\
+	  ft_print_ptr.c\
+	  get_next_line.c\
+	  get_next_line_utils.c
+
+BONUS = 	ft_lstmap.c\
+		ft_lstiter.c\
+		ft_lstclear.c\
+		ft_lstdelone.c\
+		ft_lstadd_back.c\
+		ft_lstlast.c\
+		ft_lstsize.c\
+		ft_lstadd_front.c\
+		ft_lstnew.c 
 
 OBJ = $(SRC:.c=.o)
+OBJBONUS = $(BONUS:.c=.o)
 
-.PHONY: all clean fclean re so
+.PHONY: all clean fclean re bonus so
 
 all: $(NAME)
 
-
-$(NAME):
+$(NAME): bonus
 	$(CC) $(FLAGS) -c $(SRC)
 	ar -rc $(NAME) $(OBJ)
 
+bonus:
+	$(CC) $(FLAGS) -c $(BONUS)
+	ar -rc $(NAME) $(OBJBONUS)
+
 clean:
 	rm -rf $(OBJ)
+	rm -rf $(OBJBONUS)
 
 fclean: clean
 	rm -rf $(NAME)

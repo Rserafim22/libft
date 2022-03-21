@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 12:31:35 by rserafim          #+#    #+#             */
-/*   Updated: 2021/10/20 14:01:25 by rserafim         ###   ########.fr       */
+/*   Created: 2021/10/19 11:03:42 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/20 11:59:38 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
+	size_t			i;
 
-	i = 0;
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;
+	i = 0;
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
@@ -29,10 +30,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 /*
-int	main()
+int main ()
 {
 	char *s1 = "hello";
-	char *s2 = "hello";
-
-	printf("%d\n", ft_memcmp(s1,s2,1));
+	char *s2 = "riiiiiiiiiiichard";
+	printf("%d\n", ft_memcmp(s1, s2, 5));
+	printf("%d\n", memcmp(s1, s2, 5));
 }*/

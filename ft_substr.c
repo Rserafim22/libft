@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rserafim <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: eschmid <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:56:02 by rserafim          #+#    #+#             */
-/*   Updated: 2021/11/02 13:00:34 by rserafim         ###   ########.fr       */
+/*   Created: 2021/09/21 14:10:24 by eschmid           #+#    #+#             */
+/*   Updated: 2021/10/22 14:33:12 by eschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,30 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
+	size_t	size;
 	size_t	i;
 
+	size = 0;
+	i = 0;
 	if (!s)
 		return (NULL);
-	i = 0;
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	str = malloc(len + 1);
+	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (i < len)
-		str[i++] = s[start++];
-	str[i] = '\0';
+	while (s[i])
+	{
+		if (len > size && i >= start)
+		{	
+			str[size] = s[i];
+			size++;
+		}
+		i++;
+	}
+	str[size] = '\0';
 	return (str);
 }
+/*
+int	main()
+{
+	printf("%s\n", ft_substr("salut", 2, 3));
+}*/
